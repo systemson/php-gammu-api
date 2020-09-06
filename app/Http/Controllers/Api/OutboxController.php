@@ -38,7 +38,7 @@ class OutboxController extends Controller
         $number = $request->get('number');
         $message = $request->get('message');
 
-        $process = new Process(['gammu-smsd-inject', 'TEXT', $number, '-text', $message]);
+        $process = new Process(['gammu-smsd-inject', 'TEXT', $number, '-textutf8', $message]);
         $process->run();
 
         // executes after the command finishes
